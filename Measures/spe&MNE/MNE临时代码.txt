@@ -1,0 +1,116 @@
+# from collections import Counter
+import math
+def fo(file_name):
+    fo_dict={}
+    file=open(file_name,'r')
+    for lines in file.readlines():
+        line=lines.rstrip().split('\t')
+        if len(line)>1:
+            fo_dict[line[0]]=line[1:]
+    return fo_dict
+A_fo=fo('./CG/A.fo')
+B_fo=fo('./CG/B.fo')
+C_fo=fo('./CG/C.fo')
+D_fo=fo('./CG/D.fo')
+E_fo=fo('./CG/E.fo')
+F_fo=fo('./CG/F.fo')
+G_fo=fo('./CG/G.fo')
+H_fo=fo('./CG/H.fo')
+def fo_map(data):
+    if (data[0]).upper() == 'A':
+        fo_dic = A_fo
+    elif (data[0]).upper() == 'B':
+        fo_dic = B_fo
+    elif (data[0]).upper() == 'C':
+        fo_dic = C_fo
+    elif (data[0]).upper() == 'D':
+        fo_dic = D_fo
+    elif (data[0]).upper() == 'E':
+        fo_dic = E_fo
+    elif (data[0]).upper() == 'F':
+        fo_dic = F_fo
+    elif (data[0]).upper() == 'G':
+        fo_dic = G_fo
+    elif (data[0]).upper() == 'H':
+        fo_dic = H_fo
+    return fo_dic
+# '''
+# 收集一个簇中不同的GO注释
+# '''
+# def go_set(cluster):
+#     save = set()
+#     for protein in cluster: #对簇中的每一个蛋白质进行操作
+#         fo_dic=fo_map(protein)
+#         save.add(fo_dic[protein])#记录不同GO项
+#
+#     return list(save)
+f=open('smetana_8CG_28.1s.txt','r')
+# f=open('smetana.txt','r')
+#对每一个簇进行操作
+MNE=0
+
+# 寻找被注释的簇
+annotated_cluster=[]
+cluster_number=0
+for lines in f.readlines():
+    cluster=lines.rstrip().split(' ')
+    num=0
+    for protein in cluster:
+        fo_dic = fo_map(protein)
+        if protein in fo_dic.keys():#蛋白质被注释了
+            num = num + 1
+        if num == 2:  # 至少两个蛋白质Go术语标注过
+            break
+    if num == 2:
+        annotated_cluster.append(cluster)
+        cluster_number = cluster_number + 1
+print("注释簇数目：%d"%cluster_number)
+print(annotated_cluster)
+
+
+#计算mne
+for each_cluster in annotated_cluster:
+
+    p = 0
+    NE = 0
+
+    print(each_cluster)
+    # 找到簇中不同的Go注释
+    save = set()
+    for protein in each_cluster:  # 对簇中的每一个蛋白质进行操作
+        NE = 0
+        fo_dic = fo_map(protein)
+        if protein in fo_dic.keys():
+            save.add(fo_dic[protein][0])  # 记录不同GO项
+
+    print("该簇中的Go为：")
+    print(save)
+    Go_list = list(save)
+    d = len(Go_list)
+    # 计算pi
+    if d>1:
+        for term in Go_list:
+            print(term)
+            count=0
+            for data in each_cluster:  # 对簇中的每一个蛋白质进行操作
+                ratio = 0
+                fo_dic = fo_map(data)
+                if data in fo_dic.keys() and fo_dic[data][0] == term:
+                    print(data)
+                    count = count + 1  # 找到和此Go术语相同的蛋白质数目+1
+            print("count:%d"%count)
+            print("簇蛋白总数:%d" % len(each_cluster))
+            ratio = count / len(each_cluster)
+            print("ratio:%f"%ratio)
+            p = p + ratio * math.log(ratio)
+            print("p:%f"%p)
+        NE = -1 * (1 / math.log(d)) * p
+        print("NE:%f"%NE)
+        MNE = MNE + NE
+    print("MNE:%f"% MNE)
+mne=MNE/cluster_number
+print(mne)
+
+
+
+

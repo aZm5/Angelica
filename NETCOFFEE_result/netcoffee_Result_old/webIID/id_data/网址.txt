@@ -1,0 +1,4 @@
+http://www.nwpu-bioinformatics.com/WebNetCoffee/
+结果0.5（654321）：http://www.nwpu-bioinformatics.com/WebNetCoffee/result_search.php?id=369701695
+结果0.5非id（654321）：http://www.nwpu-bioinformatics.com/WebNetCoffee/result_search.php?id=1413893852
+结果1（654321）：http://www.nwpu-bioinformatics.com/WebNetCoffee/result_search.php?id=146956714

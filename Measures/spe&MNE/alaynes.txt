@@ -1,0 +1,108 @@
+xjf@ubuntu:~/Desktop/FO$ ./FO-test smetana_8CG_28.1s.txt data.txt 0.9 FOdata.txt result.txt 1071 8000
+alpha is 0.9.
+Datafile opened.
+8 networks for alignment evaluation.
+./NETWORKS/CG/A.net is being opened.
+./NETWORKS/CG/A.net has 1000 nodes and 3984 edges.
+./NETWORKS/CG/B.net is being opened.
+./NETWORKS/CG/B.net has 1000 nodes and 3984 edges.
+./NETWORKS/CG/C.net is being opened.
+./NETWORKS/CG/C.net has 1000 nodes and 3984 edges.
+./NETWORKS/CG/D.net is being opened.
+./NETWORKS/CG/D.net has 1000 nodes and 3984 edges.
+./NETWORKS/CG/E.net is being opened.
+./NETWORKS/CG/E.net has 1000 nodes and 3984 edges.
+./NETWORKS/CG/F.net is being opened.
+./NETWORKS/CG/F.net has 1000 nodes and 3984 edges.
+./NETWORKS/CG/G.net is being opened.
+./NETWORKS/CG/G.net has 1000 nodes and 3984 edges.
+./NETWORKS/CG/H.net is being opened.
+./NETWORKS/CG/H.net has 1000 nodes and 3984 edges.
+Reading similarities.
+ppi nodes = 8000 ppi edges = 31872
+Clusterfile opened.
+datafile opened.
+./NETWORKS/CG/A.fo is being opened.
+./NETWORKS/CG/B.fo is being opened.
+./NETWORKS/CG/C.fo is being opened.
+./NETWORKS/CG/D.fo is being opened.
+./NETWORKS/CG/E.fo is being opened.
+./NETWORKS/CG/F.fo is being opened.
+./NETWORKS/CG/G.fo is being opened.
+./NETWORKS/CG/H.fo is being opened.
+There are 1070 clusters and 1045 annotated clusters. ratio:0.976636
+There are 7867 proteins in normal clusters and 7277annotated proteins in them and 7261 annotated proteins in annotated clusters. ratio:0.922969
+
+FOR K = 2
+There are 93 clusters and 79 annotated clusters. ratio:0.849462
+There are 194 proteins and 162 annotated proteins. ratio:0.835052
+
+FOR K = 3
+There are 80 clusters and 73 annotated clusters. ratio:0.9125
+There are 257 proteins and 224 annotated proteins. ratio:0.871595
+
+FOR K = 4
+There are 86 clusters and 84 annotated clusters. ratio:0.976744
+There are 377 proteins and 338 annotated proteins. ratio:0.896552
+
+FOR K = 5
+There are 80 clusters and 79 annotated clusters. ratio:0.9875
+There are 434 proteins and 385 annotated proteins. ratio:0.887097
+
+FOR K = 6
+There are 76 clusters and 75 annotated clusters. ratio:0.986842
+There are 487 proteins and 419 annotated proteins. ratio:0.86037
+
+FOR K = 7
+There are 85 clusters and 85 annotated clusters. ratio:1
+There are 636 proteins and 565 annotated proteins. ratio:0.888365
+
+FOR K = 8
+There are 368 clusters and 368 annotated clusters. ratio:1
+There are 2989 proteins and 2909 annotated proteins. ratio:0.973235
+
+
+****************************************
+
+There are 947 consistent clusters. ratio:0.90622
+There are 6582 proteins in these clusters. ratio:0.904494
+0.906487 7261 0.904494 7277
+
+FOR K = 2
+There are 79consistent clusters. ratio:1
+There are 162consistent proteins. ratio:1
+
+FOR K = 3
+There are 68consistent clusters. ratio:0.931507
+There are 207consistent proteins. ratio:0.924107
+
+FOR K = 4
+There are 75consistent clusters. ratio:0.892857
+There are 301consistent proteins. ratio:0.890533
+
+FOR K = 5
+There are 70consistent clusters. ratio:0.886076
+There are 342consistent proteins. ratio:0.888312
+
+FOR K = 6
+There are 57consistent clusters. ratio:0.76
+There are 316consistent proteins. ratio:0.754177
+
+FOR K = 7
+There are 64consistent clusters. ratio:0.752941
+There are 431consistent proteins. ratio:0.762832
+
+FOR K = 8
+There are 357consistent clusters. ratio:0.970109
+There are 2825consistent proteins. ratio:0.971124
+
+conserved 7149
+CIQ weight 7109.02
+CIQ edges 7455
+ICQ= 0.446609; CIQ= 0.953591; TOTAL= 0.902893
+ME= 0.0561914; MNE= 0.0707557
+Revised_Sensitivity= 0.57259
+Total number of visited GOs= 400 over 400
+Total conserved interactions between consistent clusters: 6926
+GOC= 947; KGOC= 0.902027; NGOC= 0.906487
+
